@@ -1,0 +1,45 @@
+﻿@model JonDJones.Com.Core.ViewModel.Pages.StartPageViewModel
+
+<h2>Notifications</h2>
+
+<input type="button" id="markNotificationAsRead" value="Mark Notifications As Read" />
+<input type="button" id="deleteAllNotifications" value="Delete All Notifications" />
+
+<ul id="notificationBoard"></ul>
+<script src="~/Scripts/jquery-1.6.4.min.js"></script>
+<script src="~/Scripts/jquery.signalR-2.2.1.min.js"></script>
+<script src="~/signalr/hubs"></script>
+
+<script>
+    $(function() {
+
+        var notificationHub = $.connection.notificationHub;
+        var notificationBoard = $('#notificationBoard');
+
+        notificationHub.client.updateNotifications = function (notifications) {
+            $('#notificationBoard').empty();
+            $.each(notifications, function () {
+                var notification = this;
+                notificationBoard.append('<li><strong>' + notification.Message + '</strong> (Message Read = ' + notification.Read + ')</li>');
+            });
+        };
+
+        $.connection.hub.start().done(function () {
+            $('#markNotificationAsRead').click(function () {
+                notificationHub.server.markNotifacationsAsRead();
+            });
+
+            $('#deleteAllNotifications').click(function () {
+                notificationHub.server.deleteAllNotifications();
+            });
+
+            notificationHub.server.getNotifications().done(function (notifications) {
+                $('#notificationBoard').empty();
+                $.each(notifications, function () {
+                    var notification = this;
+                    notificationBoard.append('<li><strong>' + notification.Message + '</strong> (Message Read = ' + notification.Read + ')</li>');
+                });
+            });
+        });
+    })
+</script>

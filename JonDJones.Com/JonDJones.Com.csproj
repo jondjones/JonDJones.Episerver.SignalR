@@ -275,6 +275,9 @@
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ItemGroup>
     <Content Include="App_Code\DisplayOptionsConfig.cs" />
+    <Content Include="App_Code\NotifactionHub.cs" />
+    <Content Include="App_Code\NotificationCentre.cs" />
+    <Content Include="App_Code\NotificationScheduledTask.cs" />
     <Compile Include="Controllers\Base\PreviewController.cs" />
     <Compile Include="Controllers\Blocks\ColourBlockController.cs" />
     <Content Include="App_Code\StructureMapDependencyResolver.cs" />
@@ -298,6 +301,7 @@
     <Folder Include="Initialization\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="backdoor.aspx" />
     <Content Include="ClientResources\addon\command\EditDynamicProperties.js" />
     <Content Include="ClientResources\addon\initialize.js" />
     <Content Include="ClientResources\addon\view\DynamicProperties.js" />

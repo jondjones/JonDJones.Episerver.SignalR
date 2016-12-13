@@ -238,11 +238,8 @@
     <Compile Include="Interfaces\IPageMetaDataProperties.cs" />
     <Compile Include="Interfaces\IPageViewModel.cs" />
     <Compile Include="Media\ImageFile.cs" />
-    <Compile Include="NotificationCode\NotifactionHub.cs" />
     <Compile Include="NotificationCode\Notification.cs" />
-    <Compile Include="NotificationCode\NotificationCentre.cs" />
     <Compile Include="NotificationCode\NotificationGeneratorIntalisationModule.cs" />
-    <Compile Include="NotificationCode\NotificationScheduledTask.cs" />
     <Compile Include="NotificationCode\Startup.cs" />
     <Compile Include="Pages\ContentPage.cs" />
     <Compile Include="Pages\Base\GlobalBasePage.cs" />

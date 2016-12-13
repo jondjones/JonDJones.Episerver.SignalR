@@ -7,11 +7,13 @@ namespace JonDJones.com.Core.NotificationCode
     {
         public Notification()
         {
-            Message = DateTime.Now.ToString(CultureInfo.InvariantCulture);
+            Date = DateTime.Now.ToString(CultureInfo.InvariantCulture);
             Read = false;
         }
 
-        public string Message { get; }
+        public string Date { get; set; }
+
+        public string Message { get; set; }
 
         public bool Read { get; set;  }
     }

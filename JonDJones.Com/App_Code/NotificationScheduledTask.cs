@@ -20,7 +20,12 @@ namespace JonDJones.com.Core.NotificationCode
 
         public override string Execute()
         {
-            NotificationCentre.Instance.AddNewNotification();
+            var notification = new Notification
+            {
+                Message = "Schedule Task Notification"
+            };
+
+            NotificationCentre.Instance.AddNewNotification(notification);
             return ToString();
         }
         public override string ToString()

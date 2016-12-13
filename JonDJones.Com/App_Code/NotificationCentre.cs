@@ -36,21 +36,29 @@ namespace JonDJones.com.Core.NotificationCode
             return _notifications;
         }
 
-        public void AddNewNotification()
+        public void AddNewNotification(Notification notification)
         {
-            _notifications.Add(new Notification());
-            Clients.All.updateNotifications(_notifications);
+            if (notification == null)
+                return;
+
+            _notifications.Add(notification);
+            BroacdcastUpdate();
         }
 
         public void MarkNotificationAsRead()
         {
             _notifications.ForEach(x => x.Read = true);
-            Clients.All.updateNotifications(_notifications);
+            BroacdcastUpdate();
         }
 
         public void DeleteAllNotifications()
         {
             _notifications.Clear();
+            BroacdcastUpdate();
+        }
+
+        private void BroacdcastUpdate()
+        {
             Clients.All.updateNotifications(_notifications);
         }
     }

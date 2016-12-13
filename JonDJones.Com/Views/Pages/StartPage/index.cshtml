@@ -23,7 +23,7 @@
             $('#notificationBoard').empty();
             $.each(notifications, function () {
                 var notification = this;
-                notificationBoard.append('<li><strong>' + notification.Message + '</strong> (Message Read = ' + notification.Read + ')</li>');
+                notificationBoard.append('<li>' + notification.Date + ': <strong>' + notification.Message + '</strong> (Message Read = ' + notification.Read + ')</li>');
             });
         };
 
@@ -40,7 +40,7 @@
                 $('#notificationBoard').empty();
                 $.each(notifications, function () {
                     var notification = this;
-                    notificationBoard.append('<li><strong>' + notification.Message + '</strong> (Message Read = ' + notification.Read + ')</li>');
+                    notificationBoard.append('<li>' + notification.Date + ': <strong>' + notification.Message + '</strong> (Message Read = ' + notification.Read + ')</li>');
                 });
             });
         });

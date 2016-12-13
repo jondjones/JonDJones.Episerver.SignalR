@@ -185,8 +185,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Web.XmlTransform, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Web.Xdt.1.0.0\lib\net40\Microsoft.Web.XmlTransform.dll</HintPath>
@@ -238,8 +238,9 @@
       <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Web.Providers">
+    <Reference Include="System.Web.Providers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Providers.Core.2.0.0\lib\net40\System.Web.Providers.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
@@ -278,6 +279,7 @@
     <Content Include="App_Code\NotifactionHub.cs" />
     <Content Include="App_Code\NotificationCentre.cs" />
     <Content Include="App_Code\NotificationScheduledTask.cs" />
+    <Content Include="App_Code\NotificationGeneratorIntalisationModule.cs" />
     <Compile Include="Controllers\Base\PreviewController.cs" />
     <Compile Include="Controllers\Blocks\ColourBlockController.cs" />
     <Content Include="App_Code\StructureMapDependencyResolver.cs" />
@@ -298,7 +300,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ClientResources\js\" />
-    <Folder Include="Initialization\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="backdoor.aspx" />
